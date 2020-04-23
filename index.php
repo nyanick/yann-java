@@ -7,15 +7,14 @@ if($method == 'POST'){
 	$requestBody = file_get_contents('php://input');
 	$json = json_decode($requestBody);
 
-	$text = $json->result->parameters->number;
+	$text = $json->queryResult->parameters->number;
 
-	if($text[0]>=6 || $text[0] == null || $text[0] == ""){
-		$speech = $text;
+	if($text>=6 || $text == null || $text == ""){
+		$speech = "please select a valid number.";
 	}
 	else{
-		$speech = $text[0];
+		$speech = "You selected ".$text;
 	}
-
 	$response = new \stdClass();
 	$response->speech = $speech;
 	$response->displayText = $speech;
