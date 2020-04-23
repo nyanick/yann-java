@@ -7,7 +7,7 @@ if($method == 'POST'){
 	$requestBody = file_get_contents('php://input');
 	$json = json_decode($requestBody);
 
-	$text = $json->result->parameters->number[0];
+	$text = $json->result->parameters->number;
 
 	if($text>=6 || $text == null || $text == ""){
 		$speech = "please select a valid number.";
