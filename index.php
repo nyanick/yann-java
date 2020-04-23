@@ -9,11 +9,11 @@ if($method == 'POST'){
 
 	$text = $json->result->parameters->number;
 
-	if($text>=6 || $text == null || $text == ""){
+	if($text[0]>=6 || $text[0] == null || $text[0] == ""){
 		$speech = "please select a valid number.";
 	}
 	else{
-		$speech = "You selected ".$text;
+		$speech = "You selected ".$text[0];
 	}
 
 	$response = new \stdClass();
