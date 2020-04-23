@@ -10,7 +10,7 @@ if($method == 'POST'){
 	$text = $json->result->parameters->number[0];
 
 	if($text>=6 || $text == null || $text == ""){
-		$speech = "pleasen select a valid number.";
+		$speech = "please select a valid number.";
 	}
 	else{
 		$speech = "You selected ".$text;
