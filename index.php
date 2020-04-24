@@ -16,8 +16,8 @@ if($method == 'POST'){
 		$speech = "You selected ".$text[0];
 	}
 	$response = new \stdClass();
-	$response->speech = $speech;
-	$response->displayText = $speech;
+	$response->text = $speech;
+	$response->fulfillmentText = $speech;
 	$response->source = "webhook";
 	echo json_encode($response);
 }
