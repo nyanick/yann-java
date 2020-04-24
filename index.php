@@ -12,6 +12,10 @@ if($method == 'POST'){
 
 	if($text[0]>=6 || $text[0] == null || $text[0] == ""){
 		$speech = "please select a valid number. 1-5" ;
+		$response->text = $speech;
+		$response->fulfillmentText = $speech;
+		$response->source = "webhook";
+		echo json_encode($response);
 	}
 	
 	else if($text[0] == 1){
