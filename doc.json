@@ -69,17 +69,6 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [
-          {
-            "in": "header",
-            "name": "header",
-            "description": "Insert token to indicate authorization to the api.",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/statusHeader"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "successful operation",
