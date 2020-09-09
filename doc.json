@@ -1,11 +1,16 @@
 {
   "swagger": "2.0",
-  "info": {
-    "description": "This is the complete documentation of iwomipay payment api. Do not hesitate to contact technical support incase of any issue integrating.",
+    "info": {
+    "description": "This file describe iwomipay core APIs. All apis are protectected operation but for the GET TOKEN Service <br/>one need to be first authenticated to perform one. Authentication is made through the Get Token service",
     "version": "1.0",
     "title": "IWOMIPAY",
+    "termsOfService": "iwomitechnologies.com",
     "contact": {
-      "email": "iwomipay@gmail.com"
+      "email": "yanicknde@gmail.com"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "iwomitechnologies.com"
     }
   },
   "host": "51.195.139.226:8443",
@@ -18,7 +23,7 @@
     "/authenticate": {
       "post": {
         "tags": [
-          "Get Token "
+          "GET TOKEN "
         ],
         "summary": "Authenticate to get the access token inorder to be granted authorized access to the webservices",
         "description": "",
@@ -55,7 +60,7 @@
     "/iwomipayStatus/{external_id}": {
       "get": {
         "tags": [
-          "Get Status"
+          "GET STATUS"
         ],
         "security": [
           {
