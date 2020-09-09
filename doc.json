@@ -17,22 +17,10 @@
   "basePath": "/v2",
   "tags": [
     {
-      "name": "pet",
-      "description": "CashIn/CashOut mobile Operations ",
+      "name": "iwomipay",
+      "description": " CashIn/CashOut mobile Operations ",
       "externalDocs": {
         "description": "Find out more",
-        "url": "http://swagger.io"
-      }
-    },
-    {
-      "name": "store",
-      "description": "Access to Petstore orders"
-    },
-    {
-      "name": "user",
-      "description": "Operations about user",
-      "externalDocs": {
-        "description": "Find out more about our store",
         "url": "http://swagger.io"
       }
     }
@@ -97,37 +85,42 @@
         ]
       }
     },
-    "/pet": {
+    "/authenticate": {
       "post": {
         "tags": [
-          "pet"
+          "Get Token "
         ],
-        "summary": "Add a new pet to the store",
+        "summary": "Authenticate to get the access token inorder to be granted authorized access to the webservices",
         "description": "",
-        "operationId": "addPet",
+        "operationId": "authenticate",
         "consumes": [
-          "application/json",
-          "application/xml"
+          "application/json"
         ],
         "produces": [
-          "application/json",
-          "application/xml"
+          "application/json"
         ],
         "parameters": [
           {
             "in": "body",
             "name": "body",
-            "description": "Pet object that needs to be added to the store",
+            "description": "Request body that is send with the request",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Pet"
+              "$ref": "#/definitions/authenticate"
             }
           }
         ],
         "responses": {
+          "200": {
+            "description": "success"
+          },
+          "404": {
+            "description": "Bad requesr"
+          },
           "405": {
             "description": "Invalid input"
-          }
+          },
+          
         },
         "security": [
           {
