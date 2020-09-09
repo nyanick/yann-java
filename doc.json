@@ -52,29 +52,25 @@
       }
     },
   
-    "/store/order": {
-      "post": {
+    "/iwomipayStatus/{external_id}": {
+      "get": {
         "tags": [
-          "store"
+          "Get Status"
         ],
-        "summary": "Place an order for a pet",
+        "summary": "Check the status Operation of your transaction.",
         "description": "",
-        "operationId": "placeOrder",
-        "consumes": [
-          "application/json"
-        ],
+        "operationId": "iwomipayStatus",
         "produces": [
-          "application/json",
-          "application/xml"
+          "application/json"
         ],
         "parameters": [
           {
-            "in": "body",
-            "name": "body",
-            "description": "order placed for purchasing the pet",
+            "in": "header",
+            "name": "header",
+            "description": "Insert token to indicate authorization to the api.",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Order"
+              "$ref": "#/definitions/statusHeader"
             }
           }
         ],
@@ -105,6 +101,14 @@
         },
         "message": {
           "type": "string"
+        }
+      }
+    },
+    "statusHeader": {
+      "type": "object",
+      "properties": {
+        "Authorization": {
+          "type": "Bearer +string"
         }
       }
     },
