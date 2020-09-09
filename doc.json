@@ -51,7 +51,50 @@
         }
       }
     },
-  
+    "/iwomipay": {
+      "post": {
+        "tags": [
+          "PERFORM OPERATION (CashIn || CashOut) "
+        ],
+        "summary": "Authenticate to get the access token inorder to be granted authorized access to the webservices",
+        "description": "",
+        "operationId": "iwomipay",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "Bearer": []
+          },
+          {
+            "": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Request body that is send with the request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/OperationBody"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request received",
+            "schema": {
+              "$ref": "#/definitions/TokenResp"
+            }
+          }
+          
+        }
+      }
+    },
     "/iwomipayStatus/{external_id}": {
       "get": {
         "tags": [
@@ -71,7 +114,6 @@
             "required": true
           }
         ],
-        "Partner": "Application & Application User",
         "summary": "Check the status Operation of your transaction.",
         "description": "",
         "operationId": "iwomipayStatus",
@@ -115,6 +157,33 @@
         },
         "message": {
           "type": "string"
+        }
+      }
+    },
+    "OperationBody": {
+      "type": "object",
+      "properties": {
+        "op_type": {
+          "type": "string",
+          "description": "credit = cashOut Operations; debit = CashIn Operations "
+        },
+        "type": {
+          "type": "string",
+          "description": "momo = MTN momo; om = Orange momo"
+        },
+        "amount": {
+          "type": "string"
+        },
+        "external_id": {
+          "type": "string",
+          "description": "transaction ID from partner"
+        },
+        "motif": {
+          "type": "string"
+        },
+        "tel": {
+          "type": "string",
+          "description": "237XXXXXXXXX"
         }
       }
     },
