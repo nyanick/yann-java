@@ -1,5 +1,5 @@
 {
-  "swagger": "1.0",
+  "swagger": "2.0",
   "info": {
     "description": "This is the API documentation of IWOMIPAY API.",
     "version": "1.0.5",
