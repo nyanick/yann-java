@@ -1,85 +1,25 @@
 {
   "swagger": "2.0",
   "info": {
-    "description": "This is the complete documentation of iwomipay payment api.",
+    "description": "This is the complete documentation of iwomipay payment api. The Base Url on production would be communicate via email.",
     "version": "1.0",
     "title": "IWOMIPAY",
     "contact": {
       "email": "iwomipay@gmail.com"
     }
   },
-  "host": "petstore.swagger.io",
+  "host": "https://51.195.139.226:8443/iwomi_pay_prod/",
   "basePath": "/v2",
   "tags": [
     {
       "name": "iwomipay",
-      "description": " CashIn/CashOut mobile Operations ",
-      "externalDocs": {
-        "description": "Find out more",
-        "url": "http://swagger.io"
-      }
+      "description": "Steps to follow for CashIn/CashOut mobile Operations ",
     }
   ],
   "schemes": [
     "https"
   ],
   "paths": {
-    "/pet/{petId}/uploadImage": {
-      "post": {
-        "tags": [
-          "iwomipay"
-        ],
-        "summary": "Get Token",
-        "description": "Authentication to get the token, inorder to grant authorized access to the payment webservices.",
-        "operationId": "uploadFile",
-        "consumes": [
-          "multipart/form-data"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "petId",
-            "in": "path",
-            "description": "ID of pet to update",
-            "required": true,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "name": "additionalMetadata",
-            "in": "formData",
-            "description": "Additional data to pass to server",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "file",
-            "in": "formData",
-            "description": "file to upload",
-            "required": false,
-            "type": "file"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/ApiResponse"
-            }
-          }
-        },
-        "security": [
-          {
-            "petstore_auth": [
-              "write:pets",
-              "read:pets"
-            ]
-          }
-        ]
-      }
-    },
     "/authenticate": {
       "post": {
         "tags": [
