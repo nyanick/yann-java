@@ -57,6 +57,12 @@
         "tags": [
           "Get Status"
         ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "Partner": "Application & Application User",
         "summary": "Check the status Operation of your transaction.",
         "description": "",
         "operationId": "iwomipayStatus",
@@ -86,6 +92,19 @@
           }
         }
       }
+    }
+  },
+  "securityDefinitions": {
+    "Partner": {
+      "in": "header",
+      "name": "Partner",
+      "description": "base64(ApiUser:ApiSecret)",
+      "type": "apiKey"
+    },
+    "Bearer": {
+      "in": "header",
+      "name": "Authorization",
+      "type": "apiKey"
     }
   },
   "definitions": {
