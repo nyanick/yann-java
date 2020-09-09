@@ -4,13 +4,8 @@
     "description": "This is the complete documentation of iwomipay payment api.",
     "version": "1.0",
     "title": "IWOMIPAY",
-    "termsOfService": "http://swagger.io/terms/",
     "contact": {
       "email": "iwomipay@gmail.com"
-    },
-    "license": {
-      "name": "Apache 2.0",
-      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     }
   },
   "host": "petstore.swagger.io",
@@ -106,7 +101,7 @@
             "description": "Request body that is send with the request",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/authenticate"
+              "$ref": "#/definitions/Pet"
             }
           }
         ],
