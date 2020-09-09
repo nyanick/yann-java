@@ -18,7 +18,7 @@
   "tags": [
     {
       "name": "pet",
-      "description": "Everything about your Pets",
+      "description": "CashIn/CashOut mobile Operations ",
       "externalDocs": {
         "description": "Find out more",
         "url": "http://swagger.io"
@@ -38,17 +38,16 @@
     }
   ],
   "schemes": [
-    "https",
-    "http"
+    "https"
   ],
   "paths": {
     "/pet/{petId}/uploadImage": {
       "post": {
         "tags": [
-          "pet"
+          "iwomipay"
         ],
-        "summary": "uploads an image",
-        "description": "",
+        "summary": "Get Token",
+        "description": "Authentication to get the token, inorder to grant authorized access to the payment webservices.",
         "operationId": "uploadFile",
         "consumes": [
           "multipart/form-data"
