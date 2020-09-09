@@ -208,21 +208,7 @@
         "name": "authenticate"
       }
     },
-    "Tag": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "name": {
-          "type": "string"
-        }
-      },
-      "xml": {
-        "name": "Tag"
-      }
-    },
+   
     "StatusResponse": {
       "type": "object",
       "properties": {
