@@ -8,14 +8,9 @@
       "email": "iwomipay@gmail.com"
     }
   },
-  "host": "https://51.195.139.226:8443/iwomi_pay_prod/",
-  "basePath": "/v2",
-  "tags": [
-    {
-      "name": "iwomipay",
-      "description": "Steps to follow for CashIn/CashOut mobile Operations ",
-    }
-  ],
+  "host": "https://51.195.139.226:8443",
+  "basePath": "/iwomi_pay_prod",
+  
   "schemes": [
     "https"
   ],
