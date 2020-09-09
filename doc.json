@@ -80,9 +80,9 @@
         ],
         "responses": {
           "200": {
-            "description": "successful operation",
+            "description": "Request successful",
             "schema": {
-              "$ref": "#/definitions/Order"
+              "$ref": "#/definitions/StatusResponse"
             }
           },
           "400": {
@@ -97,12 +97,12 @@
       "in": "header",
       "name": "Partner",
       "description": "base64(ApiUser:ApiSecret)",
-      "type": "Account"
+      "type": "apiKey"
     },
     "Bearer": {
       "in": "header",
       "name": "Authorization",
-      "type": "token"
+      "type": "apiKey"
     }
   },
   "definitions": {
@@ -144,21 +144,6 @@
         }
       }
     },
-    "Category": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "name": {
-          "type": "string"
-        }
-      },
-      "xml": {
-        "name": "Category"
-      }
-    },
     "authenticate": {
       "type": "object",
       "required": [
@@ -195,40 +180,23 @@
         "name": "Tag"
       }
     },
-    "Order": {
+    "StatusResponse": {
       "type": "object",
       "properties": {
-        "id": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "petId": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "quantity": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "shipDate": {
+        "success": {
           "type": "string",
-          "format": "date-time"
+          "description": "01 - success; 100 - failed; 100 - pending"
         },
-        "status": {
+        "message": {
+          "type": "string"
+        },
+        "external_id": {
           "type": "string",
-          "description": "Order Status",
-          "enum": [
-            "placed",
-            "approved",
-            "delivered"
-          ]
-        },
-        "complete": {
-          "type": "boolean"
+          "description": "transaction Id"
         }
       },
       "xml": {
-        "name": "Order"
+        "name": "StatusResponse"
       }
     },
     "User": {
