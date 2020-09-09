@@ -89,16 +89,16 @@
     }
   },
   "securityDefinitions": {
-    "Partner": {
+    "": {
       "in": "header",
       "name": "Partner",
       "description": "base64(ApiUser:ApiSecret)",
-      "type": "apiKey"
+      "type": "Account"
     },
     "Bearer": {
       "in": "header",
       "name": "Authorization",
-      "type": "apiKey"
+      "type": "token"
     }
   },
   "definitions": {
