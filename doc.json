@@ -8,11 +8,11 @@
       "email": "yanicknde@gmail.com"
     }
   },
-  "host": "51.195.139.226:8443",
-  "basePath": "/iwomi_pay_prod",
+  "host": "51.83.98.221:8080",
+  "basePath": "/iwomi_pay_prodv2",
   
   "schemes": [
-    "https"
+    "http"
   ],
   "paths": {
     "/authenticate": {
@@ -54,7 +54,7 @@
     "/iwomipay": {
       "post": {
         "tags": [
-          "PERFORM OPERATION (CashIn || CashOut) "
+          "PERFORM OPERATION (Collection || Disbursement) "
         ],
         "summary": "Authenticate to get the access token inorder to be granted authorized access to the webservices",
         "description": "",
@@ -95,7 +95,7 @@
         }
       }
     },
-    "/iwomipayStatus/{external_id}": {
+    "/iwomipayStatus/{internal_id}": {
       "get": {
         "tags": [
           "GET STATUS"
@@ -108,8 +108,8 @@
         "parameters": [
           {
             "in": "path",
-            "name": "external_id",
-            "description": "Transaction Id we are trying to get its status",
+            "name": "internal_id",
+            "description": "Transaction Id(this is the ID from iwomipay not partner's external_id) we are trying to get its status",
             "type": "string",
             "required": true
           }
@@ -134,7 +134,7 @@
   "securityDefinitions": {
     "": {
       "in": "header",
-      "name": "Partner",
+      "name": "AccountKey",
       "description": "base64(ApiUser:ApiSecret)",
       "type": "apiKey"
     },
@@ -148,9 +148,10 @@
     "TokenResp": {
       "type": "object",
       "properties": {
-        "success": {
+        "status": {
           "type": "integer",
-          "format": "int32"
+          "format": "int32",
+          "description":" 01 - Authentication successful \n 401 - Invalid credentials"
         },
         "token": {
           "type": "string"
@@ -184,6 +185,19 @@
         "tel": {
           "type": "string",
           "description": "237XXXXXXXXX"
+        },
+        "country": {
+          "type": "string",
+          "description": "cm - Cameroon"
+        },
+        "currency": {
+          "type": "string",
+          "description": "optional - deafult = xaf"
+        },
+        "callback_url": {
+          "type": "string",
+          "example:"http://mybaseurl/callback_service",
+          "description": "Return final status of the operation, same response as the operation status (/iwomipayStatus) webservice"
         }
       }
     },
@@ -212,16 +226,20 @@
     "StatusResponse": {
       "type": "object",
       "properties": {
-        "success": {
+        "status": {
           "type": "string",
-          "description": "01 - success; 100 - failed; 1000 - pending"
+          "description": "01 - success \n 100 - failed \n 1000 - pending \n 409 - balance insufficient \n401 - Unauthorized \n 400 - Wrong Formatting, Synthax Error\n 404 - Resource not found \n 500 - Service temporarily unavailable\n 503 - Forbidden "; 
         },
         "message": {
           "type": "string"
         },
         "external_id": {
           "type": "string",
-          "description": "transaction Id"
+          "description": "transaction Id from Partner"
+        },
+        "internal_id": {
+          "type": "string",
+          "description": "transaction Id in IWOMIPAY system"
         }
       },
       "xml": {
