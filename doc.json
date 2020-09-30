@@ -228,7 +228,7 @@
       "properties": {
         "status": {
           "type": "string",
-          "description": "01 - success \n 100 - failed \n 1000 - pending \n 409 - balance insufficient \n401 - Unauthorized \n 400 - Wrong Formatting, Synthax Error\n 404 - Resource not found \n 500 - Service temporarily unavailable\n 503 - Forbidden "; 
+          "description": "01 - success \n 100 - failed \n 1000 - pending \n 409 - balance insufficient \n401 - Unauthorized \n 400 - Wrong Formatting, Synthax Error\n 404 - Resource not found \n 500 - Service temporarily unavailable\n 503 - Forbidden "
         },
         "message": {
           "type": "string"
