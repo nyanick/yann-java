@@ -56,7 +56,7 @@
         "tags": [
           "PERFORM OPERATION (Collection || Disbursement) "
         ],
-        "summary": "Authenticate to get the access token inorder to be granted authorized access to the webservices",
+        "summary": "Perfrom your Collect and PayOut operations with this webservice",
         "description": "",
         "operationId": "iwomipay",
         "consumes": [
