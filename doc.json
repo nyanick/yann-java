@@ -166,11 +166,11 @@
       "properties": {
         "op_type": {
           "type": "string",
-          "description": "credit = cashOut Operations; debit = CashIn Operations "
+          "description": "credit = Collect Opertaions; debit = PayOut Operations "
         },
         "type": {
           "type": "string",
-          "description": "momo = MTN momo; om = Orange momo"
+          "description": "momo = MTN momo; om = Orange momo; card = MASTER/VISA; paypal = Paypal Payments"
         },
         "amount": {
           "type": "string"
@@ -185,6 +185,10 @@
         "tel": {
           "type": "string",
           "description": "237XXXXXXXXX"
+        },
+        "email": {
+          "type": "string",
+          "description": "for card payments and paypal"
         },
         "country": {
           "type": "string",
