@@ -244,6 +244,10 @@
         "internal_id": {
           "type": "string",
           "description": "transaction Id in IWOMIPAY system"
+        },
+        "redirectUrl": {
+          "type": "string",
+          "description": "Card and paypal payments only, this servers to redirect to the payment interface for card payments"
         }
       },
       "xml": {
