@@ -9,7 +9,7 @@
     }
   },
   "host": "51.83.98.221:8080",
-  "basePath": "/iwomi_pay_prodv2",
+  "basePath": "/iwomi_test",
   
   "schemes": [
     "http"
