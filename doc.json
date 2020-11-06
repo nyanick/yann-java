@@ -8,11 +8,11 @@
       "email": "yanicknde@gmail.com"
     }
   },
-  "host": "51.83.98.221:8080",
+  "host": "www.pay.iwomitechnologies.com:8443",
   "basePath": "/iwomi_test",
   
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/authenticate": {
