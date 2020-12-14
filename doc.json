@@ -131,7 +131,7 @@
       }
     }
   },
-  "securityDefinitions": {
+  "securitySchemes": {
     "": {
       "in": "header",
       "name": "AccountKey",
