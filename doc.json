@@ -135,13 +135,16 @@
     "": {
       "in": "header",
       "name": "AccountKey",
-      "description": "base64(ApiKey:ApiSecret)",
-      "type": "apiKey"
+      "description": "Enter the value of base64(ApiKey:ApiSecret)",
+      "type": "http"
     },
     "Bearer": {
       "in": "header",
       "name": "Authorization",
-      "type": "apiKey"
+      "type": "http",
+      "description":"Enter the JWT Bearer token **_only_**",
+      "scheme":"bearer",
+      "bearerFormat":"JWT"
     }
   },
   "definitions": {
