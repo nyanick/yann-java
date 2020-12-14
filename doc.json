@@ -1,5 +1,5 @@
 {
-  "openapi": "3.0.1",
+  "swagger": "2.0",
     "info": {
     "description": "This file describe iwomipay core APIs. All apis are protectected operation but for the GET TOKEN Service <br/>one needs to be authenticate inorder to perform an operartion. Authentication is made through the Get Token service",
     "version": "1.0",
@@ -131,20 +131,17 @@
       }
     }
   },
-  "securitySchemes": {
+  "securityDefinitions": {
     "": {
       "in": "header",
       "name": "AccountKey",
-      "description": "Enter the value of base64(ApiKey:ApiSecret)",
-      "type": "http"
+      "description": "base64(ApiKey:ApiSecret)",
+      "type": "apiKey"
     },
     "Bearer": {
       "in": "header",
       "name": "Authorization",
-      "type": "http",
-      "description":"Enter the JWT Bearer token **_only_**",
-      "scheme":"bearer",
-      "bearerFormat":"JWT"
+      "type": "apiKey"
     }
   },
   "definitions": {
