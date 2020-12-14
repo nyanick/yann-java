@@ -1,5 +1,5 @@
 {
-  "swagger": "2.0",
+  "openapi": "3.0.1",
     "info": {
     "description": "This file describe iwomipay core APIs. All apis are protectected operation but for the GET TOKEN Service <br/>one needs to be authenticate inorder to perform an operartion. Authentication is made through the Get Token service",
     "version": "1.0",
