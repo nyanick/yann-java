@@ -135,7 +135,7 @@
     "": {
       "in": "header",
       "name": "AccountKey",
-      "description": "base64(ApiUser:ApiSecret)",
+      "description": "base64(ApiKey:ApiSecret)",
       "type": "apiKey"
     },
     "Bearer": {
