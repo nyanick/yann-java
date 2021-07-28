@@ -9,7 +9,7 @@
     }
   },
   "host": "www.pay.iwomitechnologies.com:8443",
-  "basePath": "/iwomi_test",
+  "basePath": "/iwomipay_sandbox",
   
   "schemes": [
     "https"
@@ -201,7 +201,31 @@
         "callback_url": {
           "type": "string",
           "example":"http://mybaseurl/callback_service",
-          "description": "Return final status of the operation, same response as the operation status (/iwomipayStatus) webservice"
+          "description": "A POST URL to return final status of the operation, same response as the operation status (/iwomipayStatus) webservice"
+        },
+        "fist_name": {
+          "type": "string",
+          "description": "for card payments only"
+        },
+        "last_name": {
+          "type": "string",
+          "description": "for card payments only"
+        },
+        "address": {
+          "type": "string",
+          "description": "for card payments only"
+        },
+        "city": {
+          "type": "string",
+          "description": "for card payments only"
+        },
+        "success_url": {
+          "type": "string",
+          "description": "for card and paypal payments only, link to redirect after a successful operations"
+        },
+        "failed_url": {
+          "type": "string",
+          "description": "for card and paypal payments only, link to redirect after a failed operations"
         }
       }
     },
@@ -232,7 +256,7 @@
       "properties": {
         "status": {
           "type": "string",
-          "description": " 01 - success \n 100 - failed \n 1000 - pending \n 409 - balance insufficient \n 401 - Unauthorized \n 400 - Wrong Formatting Synthax Error \n 404 - Resource not found \n 500 - Service temporarily unavailable \n 503 - Forbidden "
+          "description": " 01 - success \n 100 - failed \n 1000 - pending \n 401 - Unauthorized \n 400 - Wrong Formatting Synthax Error \n 404 - Resource not found \n 500 - Service temporarily unavailable \n 503 - Forbidden "
         },
         "message": {
           "type": "string"
@@ -257,6 +281,6 @@
   },
   "externalDocs": {
     "description": "Find out more about IWOMI Technologies",
-    "url": "http://iwomitechnologies.com"
+    "url": "https://www.iwomitechnologies.com"
   }
 }
