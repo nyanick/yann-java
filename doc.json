@@ -1,7 +1,34 @@
 {
   "swagger": "2.0",
     "info": {
-    "description": "This file describe iwomipay core APIs. All apis are protectected operation but for the GET TOKEN Service <br/>one needs to be authenticate inorder to perform an operartion. Authentication is made through the Get Token service",
+    "description": "This file describes iwomipay core APIs. All APIs are protectected operation but for the GET TOKEN Service <br/>
+one needs to be authenticated inorder to perform an operartion. Authentication is made through the Get Token service <br/>
+
+Authentication: <br/> 
+
+username : iwomipay2021 <br/> 
+password : iwomipay@2020 <br/> 
+
+ApiKeys and ApiSecrets: <br/>
+
+MOMO ApiKey : 5e016fb8-ef10-458c-80c4-442e94708eee <br/>
+MOMO ApiSecret: 6ef3965f-ccb9-4f70-8864-1ca1de8e7c7d <br/>
+
+OM ApiKey: 36f4b65b-bbcf-4ca6-b881-1ba76b95ac39 <br/>
+OM ApiSecret: 0cf40e83-e3eb-4bc1-9504-8d6cd3878343 <br/>
+
+PayPal ApiKey: c4990995-29de-429a-8cdd-c5509953a0e6 <br/>
+Paypal ApiSecret: e64494b6-59a2-4579-b067-566ca140be63 <br/>
+
+Card ApiKey: 5e8e482d-e299-4e40-86d6-41d1cf218466 <br/>
+Card ApiSecret: 970bef1a-60d2-4925-b478-af0cbd4691ed <br/>
+
+Test Numbers and Email <br/>
+
+MTN MOMO  237677777777 - > SUCCESS        237677777778 - > PENDING    237677777779 - > FAILED <br/>
+ORANGE    237699999999 - > SUCCESS        237699999998 - > PENDING    Other numbers - > FAILED <br/>
+PAYPAL  email: iwomipay_sandbox@gmail.com  password : iwomipay2021      Germany
+",
     "version": "1.0",
     "title": "IWOMIPAY",
     "contact": {
