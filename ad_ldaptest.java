@@ -1,8 +1,9 @@
 import java.util.*;
 import javax.naming.*;
 import javax.naming.directory.*;
+import javax.naming.ldap.*;
 
-public class ad_ldaptest {
+public class ad_ldaptest1 {
   public static void main(String a[]) {
 
     // set the LDAP authentication method
@@ -20,10 +21,12 @@ public class ad_ldaptest {
     String ldap_pw      = "Douala*2021";
     //String ldap_pw      = "";
     // This is our base DN
-    //String base_dn      = "OU=SGBC,DC=bhfm-cam,DC=fr,DC=socgen,DC=com";
-    String base_dn = "CN=Njie Obaker Theophile Chandler,OU=Users,OU=SGBC,DC=bhfm-cam,DC=fr,DC=socgen,DC=com";
+    String base_dn      = "OU=SGBC,DC=bhfm-cam,DC=fr,DC=socgen,DC=com";
+    //String base_dn = "CN=Njie Obaker Theophile Chandler,OU=Users,OU=SGBC,DC=bhfm-cam,DC=fr,DC=socgen,DC=com";
+    
+    String usern = "Chandler";
 
-    DirContext ctx      = null;
+    LdapContext ctx      = null;
     Hashtable env       = new Hashtable();
 
     // Here we store the returned LDAP object data
@@ -42,7 +45,7 @@ public class ad_ldaptest {
       System.out.println("Connecting to host " + ldap_host + " at port " + ldap_port + "...");
       System.out.println();
 
-      ctx = new InitialDirContext(env);
+      ctx = new InitialLdapContext(env,null);
       System.out.println("LDAP authentication successful!");
       
       
@@ -57,10 +60,12 @@ public class ad_ldaptest {
       ctls.setSearchScope(SearchControls.SUBTREE_SCOPE);
 
       // Specify the search filter to match
-      String filter = "(objectClass=user)";
+      //String filter = "(objectClass=user)";
       //String filter = "(&(objectCategory=person)(objectClass=user))";
-      //String filter = "(&(objectClass=user)(sAMAccountName=chandler.njie-obaker))";
-      //String filter = "(&(objectClass=user)(sAMAccountName=raoul.bille))";
+      //String filter = "(&(objectClass=user)(cn=*" + usern+"*))";
+      //String filter = "(|(cn=* " + usern+"*)(cn=ITSM - * " + usern+"*)(cn=alt prefix - * " + usern+"*))";
+      String filter = "(&(objectClass=user)(cn=*" + usern+"*))";
+      System.out.println(filter);
 
       // Search the subtree for objects using the given filter
       NamingEnumeration answer = ctx.search(base_dn, filter, ctls);
@@ -76,22 +81,15 @@ public class ad_ldaptest {
         String distinguishedName = sr.getNameInNamespace();
 
         System.out.println("Found Object: " + dn + "," + base_dn);
-        System.out.println("Found Value userPrincipalName: " + attrs.get("userPrincipalName"));
-        System.out.println("Found Value sn: " + attrs.get("sn"));
-        System.out.println("Found Value cn: " + attrs.get("cn"));
-        System.out.println("Found Value sAMAccountName: " + attrs.get("sAMAccountName"));
-        System.out.println("Found Value mail: " + attrs.get("mail"));
+        System.out.println("Found Value userPrincipalName: " + attrs.get("userPrincipalName").get());
+        System.out.println("Found Value sn: " + (String)attrs.get("sn").get());
+         System.out.println("Found Value givenName: " + (String)attrs.get("givenName").get());
+        System.out.println("Found Value cn: " + (String)attrs.get("cn").get());
+        //System.out.println("Found Value middleName: " + (String)attrs.get("middleName").get());
+        System.out.println("Found Value mail: " + (String)attrs.get("mail").get());
+        System.out.println("Found Value telephoneNumber: " + (String)attrs.get("telephoneNumber").get());
         System.out.println("Found Value distinguishedName: " + distinguishedName);
         
-        Properties authEnv = new Properties();
-        authEnv.put(Context.INITIAL_CONTEXT_FACTORY, "com.sun.jndi.ldap.LdapCtxFactory");
-        authEnv.put(Context.PROVIDER_URL, "ldap://" + ldap_host + ":" + ldap_port);
-        authEnv.put(Context.SECURITY_PRINCIPAL, distinguishedName);
-        authEnv.put(Context.SECURITY_CREDENTIALS, "Socgen@2026");
-        new InitialDirContext(authEnv);
-        
-
-        System.out.println("Authentication successful");
         
         /*
         if (attrs != null) {
@@ -100,20 +98,25 @@ public class ad_ldaptest {
           while (ae.hasMoreElements()) {
             Attribute attr = (Attribute)ae.next();
             String attrId = attr.getID();
-            //System.out.println("Found Attribute: " + attrId);
-            
-            
-            
+            System.out.println("Found Attribute: " + attrId);
             
             Enumeration vals = attr.getAll();
             while (vals.hasMoreElements()) {
-              String attr_val = (String)vals.nextElement();
-              System.out.println(attrId + ": " + attr_val);
+              try{
+                String attr_val = (String)vals.nextElement();
+                System.out.println(attrId + ": " + attr_val);
+              }
+              catch(Exception e){
+                System.out.println(e.getMessage());
+              
+              }
+              
             }
             
           }
         }
         */
+
      }
      System.out.println("see me yann");
 
