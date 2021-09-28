@@ -1,0 +1,13 @@
+1-0002
+
+[{"required":false,"format":"acscd","name":"NO. BDC"},{"required":false,"format":"val","name":"1"},{"required":true,"format":"lib1","name":"NOM ET PRENOMS"},{"required":true,"format":"mnt1","name":"MONTANT NOMINAL"},{"required":false,"format":"taux1","name":"TAUX"},{"required":true,"format":"dat1","name":"DATE DE SOUSCRIPTION"},{"required":false,"format":"mnt2","name":""},{"required":true,"format":"dat2","name":"DATE ECHEANCE"},{"required":true,"format":"lib2","name":"TYPE BDC","dropdown":{"service":"getNomenDataByTabcd/9092","key":"acscd","value":"lib1","val":"0010","arg":"method:get|arrKey:data"}},{"required":true,"format":"lib3","name":"OBSERVATION"},{"name":"DUREE (En Mois)","format":"lib4","required":true,"calc":"dat1-dat2"}]
+
+
+2- 0001
+
+[{"required":false,"format":"acscd","name":"NO. DAT"},{"required":false,"format":"lib1","name":"DENOMINATIONS"},{"required":false,"format":"val","name":"1"},{"required":false,"format":"lib2","name":"NO. COMPTE"},{"required":false,"format":"lib3","name":"SITUATION","dropdown":{"service":"getNomenDataByTabcd/9093","key":"acscd","value":"lib1","val":"0009","arg":"method:get|arrKey:data"}},{"required":false,"format":"mnt1","name":"MONTANT NOMINAL"},{"required":false,"format":"taux1","name":"TAUX"},{"required":false,"format":"dat1","name":"DATE ECHEANCE"},{"required":false,"format":"dat2","name":"DATE SOUSCRIPTION"},{"required":false,"format":"mnt2","name":""},{"required":false,"format":"lib4","name":"RENOUVELLEMENT"},{"required":false,"format":"fichier1","name":""},{"name":"DUREE","format":"lib5","calc":"dat1-dat2"}]
+
+
+3-0003
+
+[{"required":false,"format":"acscd","name":"acscd"},{"required":false,"format":"val","name":"1"},{"required":true,"format":"lib1","name":"Compte"},{"required":true,"format":"mnt1","name":"Solde Veille"},{"required":true,"format":"mnt2","name":"Apres Caisse Retrait"},{"required":true,"format":"mnt3","name":"Apres Caisse Versement"},{"required":true,"format":"mnt4","name":"Solde Mouvements Apres Caisse"},{"required":true,"format":"mnt5","name":"Versements"},{"required":true,"format":"fichier1","name":""},{"required":false,"format":"lib4","name":""},{"required":false,"format":"fichier2","name":""},{"required":true,"format":"mnt6","name":"Retraits"},{"required":true,"format":"mnt7","name":"Mouvements du soir"},{"required":true,"format":"mnt8","name":"Difference Constatée"},{"required":true,"format":"mnt9","name":""},{"required":false,"format":"data1","name":"Notes"},{"name":"Solde Compte Général","format":"lib2","calc":"mnt1+mnt5-mnt6"}]
