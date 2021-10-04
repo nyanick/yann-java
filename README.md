@@ -9,4 +9,4 @@ This is a java swing gui program that calculates gpa after receiving mandatory i
 its display the various grades relative to the marks and calculates the gpa.
 This code was built in netbeans
 
-select lib1,mnt1,mnt2 from (with e as ( select lib1, sum(mnt1)as mnt1 from scinv where lib6 not like :chap group by lib1), a as (select lib1, sum(mnt1)as mnt2 from scinv where lib6 like :chap group by lib1) select e.lib1, e.mnt1 , a.mnt2 from e,a  where (e.mnt1 != 0 or  a.mnt2 != 0))r;
+INSERT INTO `ussdsession` (`id`, `crtd`, `dele`, `iscon`, `lang`, `lib2`, `mdfi`, `phone`, `pos`, `preval`, `uuid`) VALUES ('2', '2021-05-11 15:00:18.000000', '0', b'1', 'en', NULL, NULL, '675669236', NULL, NULL, '001');
