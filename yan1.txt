@@ -1,3 +1,1 @@
-INSERT INTO `pwd` (`id`, `acscd`, `crtd`, `dele`, `descrip`, `etab`, `lib1`, `lib2`, `login`, `mdfi`, `pass`) VALUES
-(4, '0216', NULL, '0', NULL, NULL, NULL, NULL, NULL, NULL, 'aXdvbWk2Nzg5MTAxMTEyMQ==');
-COMMIT;
+
