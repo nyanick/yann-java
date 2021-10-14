@@ -1,1 +1,2 @@
 
+INSERT INTO `labels` (`id`, `crtd`, `dele`, `cle`, `mdfi`, `valen`, `valfr`) VALUES ('33', NULL, '0', 'agency_val_msg', NULL, 'Your account attachment is currently invalidation by the Agency. You would receive a PIN code once we have successfully validated it.\r\nThanks for trusting CCC PLC.', 'Le rattachment de votre compte est en cours de validation par l\'agence. Vous recevrez un code PIN une fois que nous l\'aurons valider avec succes.\r\nMerci de faire confiance à CCC PLC.');
